@@ -2,7 +2,7 @@
 #include <iostream>
 #include <tuple>
 
-namespace FunctionDependencies {
+namespace Soutien {
 
 	template<class Func, class... Requirements>
 	struct GuardedFunction {
@@ -47,5 +47,5 @@ namespace FunctionDependencies {
 }
 
 #define GUARDED_FUNCTION(func, ...) \
-    FunctionDependencies::createGuardedFunction(func, #func, ##__VA_ARGS__)
+    Soutien::createGuardedFunction(func, #func, ##__VA_ARGS__)
 
