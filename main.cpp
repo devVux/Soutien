@@ -1,8 +1,8 @@
 #include <iostream>
-#include "FunctionDependencies.h"
+#include "SoutienFlow.h"
 
 int main() {
-    using namespace FunctionDependencies;
+    using namespace SoutienFlow;
 
     auto a = []() { std::cout << "a() executed\n"; };
     auto b = []() { std::cout << "b() executed\n"; };

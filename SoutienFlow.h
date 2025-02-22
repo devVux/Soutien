@@ -2,7 +2,7 @@
 #include <iostream>
 #include <tuple>
 
-namespace Soutien {
+namespace SoutienFlow {
 
 	template<class Func, class... Requirements>
 	struct GuardedFunction {
@@ -40,12 +40,12 @@ namespace Soutien {
 	};
 
 	template<class Func, class... Dependencies>
-	auto createGuardedFunction(Func f, const char* name, Dependencies... deps) {
-		return GuardedFunction<Func, Dependencies...>(f, name, deps...);
+	auto createGuardedFunction(Func func, const char* name, Dependencies... deps) {
+		return GuardedFunction<Func, Dependencies...>(func, name, deps...);
 	}
 
 }
 
 #define GUARDED_FUNCTION(func, ...) \
-    Soutien::createGuardedFunction(func, #func, ##__VA_ARGS__)
+    SoutienFlow::createGuardedFunction(func, #func, ##__VA_ARGS__)
 
